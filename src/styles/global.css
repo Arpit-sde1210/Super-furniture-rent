@@ -1,0 +1,390 @@
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+:root {
+
+  --primary: #111111;
+
+  --primary-dark: #000000;
+
+  --secondary: #c89b3c;
+
+  --secondary-light: #e0bb63;
+
+  --text-dark: #111827;
+
+  --text-light: #6b7280;
+
+  --bg-light: #f9fafb;
+
+  --bg-white: #ffffff;
+
+  --border-color: #e5e7eb;
+
+  --success: #10b981;
+
+  --danger: #ef4444;
+}
+
+html {
+
+  scroll-behavior: smooth;
+}
+
+body {
+
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+
+  color: var(--text-dark);
+
+  line-height: 1.7;
+
+  background: var(--bg-white);
+
+  overflow-x: hidden;
+}
+
+/* LINKS */
+
+a {
+
+  text-decoration: none;
+
+  color: inherit;
+}
+
+/* BUTTONS */
+
+button {
+
+  border: none;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* INPUTS */
+
+input,
+textarea,
+select {
+
+  font-family: inherit;
+
+  outline: none;
+}
+
+/* IMAGES */
+
+img {
+
+  max-width: 100%;
+
+  display: block;
+
+  image-rendering: auto;
+
+  backface-visibility: hidden;
+}
+
+/* SMOOTH GPU */
+
+.category-card,
+.product-card,
+.feature-card,
+.btn-primary,
+.btn-secondary,
+.btn-add,
+.btn-compare,
+.filter-btn,
+.nav-link {
+
+  will-change: transform;
+
+  transform: translateZ(0);
+
+  backface-visibility: hidden;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateX(-30px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateX(30px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+
+    opacity: 1;
+  }
+
+  50% {
+
+    opacity: 0.5;
+  }
+}
+
+@keyframes scaleIn {
+
+  from {
+
+    transform: scale(0.95);
+
+    opacity: 0;
+  }
+
+  to {
+
+    transform: scale(1);
+
+    opacity: 1;
+  }
+}
+
+/* ANIMATION CLASSES */
+
+.fade-in {
+
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in-left {
+
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.slide-in-right {
+
+  animation: slideInRight 0.6s ease-out;
+}
+
+.pulse {
+
+  animation: pulse 2s infinite;
+}
+
+.scale-in {
+
+  animation: scaleIn 0.3s ease-out;
+}
+
+/* UTILITY CLASSES */
+
+.container {
+
+  max-width: 1280px;
+
+  margin: 0 auto;
+
+  padding: 0 24px;
+}
+
+.section-spacing {
+
+  padding: 100px 0;
+}
+
+.text-center {
+
+  text-align: center;
+}
+
+.mt-4 {
+
+  margin-top: 2rem;
+}
+
+.mb-4 {
+
+  margin-bottom: 2rem;
+}
+
+.flex {
+
+  display: flex;
+}
+
+.flex-center {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.grid {
+
+  display: grid;
+}
+
+.gap-4 {
+
+  gap: 2rem;
+}
+
+/* HEADINGS */
+
+.section-heading {
+
+  font-size: 52px;
+
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  letter-spacing: -1px;
+
+  color: var(--text-dark);
+
+  margin-bottom: 18px;
+}
+
+.section-subheading {
+
+  font-size: 18px;
+
+  color: var(--text-light);
+
+  line-height: 1.9;
+
+  max-width: 760px;
+
+  margin: 0 auto;
+}
+
+/* HOVER SMOOTHNESS */
+
+.product-card,
+.category-card,
+.feature-card {
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+/* PREMIUM SCROLLBAR */
+
+body::-webkit-scrollbar {
+
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+
+  background: #f5f5f5;
+}
+
+body::-webkit-scrollbar-thumb {
+
+  background: #c89b3c;
+
+  border-radius: 999px;
+}
+
+/* SECTIONS */
+
+section {
+
+  position: relative;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .section-spacing {
+
+    padding: 70px 0;
+  }
+
+  .container {
+
+    padding: 0 18px;
+  }
+
+  .section-heading {
+
+    font-size: 38px;
+  }
+
+  .section-subheading {
+
+    font-size: 16px;
+  }
+}
